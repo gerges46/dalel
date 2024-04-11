@@ -39,7 +39,7 @@ void initState() {
 }
   void delayedNavigate(context) {
     Future.delayed(const Duration(seconds: 2), () {
-      customNavigate(context,"/onBoarding");
+      customReplacementNavigate(context,"/onBoarding");
     },
     );
   }
