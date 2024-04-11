@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class Colors{
+abstract class MyColors{
   static Color primaryColor =Color(0xffC49E85);
   static Color offWhite =Color(0xffF8F4F9);
 static Color deepBrowen=Color(0xff6B4B3E);
