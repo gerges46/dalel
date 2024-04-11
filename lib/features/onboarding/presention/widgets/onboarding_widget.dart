@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projectapp/core/utiles/app_assets.dart';
 
 import 'package:projectapp/core/utiles/apptext_style.dart';
+import 'package:projectapp/features/onboarding/data/model/on_boarding_model.dart';
 import 'package:projectapp/features/onboarding/presention/widgets/custom_smoth_page_indecator.dart';
 
 
@@ -14,7 +15,7 @@ class OnBoardingWidgetBody extends StatelessWidget{
    child: PageView.builder(
     physics: BouncingScrollPhysics(),
     controller: _controller,
-    itemCount: 3,
+    itemCount: onBoardingData.length,
  itemBuilder: (context,index){
     return Column(
  children: [
@@ -22,7 +23,9 @@ class OnBoardingWidgetBody extends StatelessWidget{
   height: 290,
   width: 343,
   decoration: BoxDecoration(
-    image: DecorationImage(image:    AssetImage(Assets.imagesFrame1),
+    image: DecorationImage(image:    AssetImage(
+      onBoardingData[index].imagePath
+    ),
     fit: BoxFit.fill,
     ),
   ),
@@ -30,13 +33,13 @@ class OnBoardingWidgetBody extends StatelessWidget{
     const SizedBox(height: 24,),
     CustomSmoothPageIndictor(controller: _controller),
         SizedBox(height: 32,),
-    Text("Explore The history with Dalel in a smart way",style: CustomTextStyles.poppins500style24.copyWith(fontWeight: FontWeight.bold,),
+    Text(onBoardingData[index].title,style: CustomTextStyles.poppins500style24.copyWith(fontWeight: FontWeight.bold,),
     textAlign: TextAlign.center,
     maxLines: 2,
     overflow: TextOverflow.ellipsis,
     ),
     SizedBox(height: 16,),
-Text("Using our app’s history libraries you can find many historical periods", style: CustomTextStyles.poppins300style16,),
+Text(onBoardingData[index].subTitle, style: CustomTextStyles.poppins300style16,),
  ],
     );
    }
