@@ -7,14 +7,17 @@ import 'package:projectapp/features/onboarding/presention/widgets/custom_smoth_p
 
 
 class OnBoardingWidgetBody extends StatelessWidget{
-  final PageController _controller=PageController();
+final PageController controller;
+final Function(int)? onPageChanged;
+  const OnBoardingWidgetBody({super.key, required this.controller, this.onPageChanged});
   @override
   Widget build(BuildContext context) {
  return SizedBox(
   height: 500,
    child: PageView.builder(
+    onPageChanged: onPageChanged,
     physics: BouncingScrollPhysics(),
-    controller: _controller,
+    controller: controller,
     itemCount: onBoardingData.length,
  itemBuilder: (context,index){
     return Column(
@@ -31,7 +34,7 @@ class OnBoardingWidgetBody extends StatelessWidget{
   ),
  ),
     const SizedBox(height: 24,),
-    CustomSmoothPageIndictor(controller: _controller),
+    CustomSmoothPageIndictor(controller: controller),
         SizedBox(height: 32,),
     Text(onBoardingData[index].title,style: CustomTextStyles.poppins500style24.copyWith(fontWeight: FontWeight.bold,),
     textAlign: TextAlign.center,
