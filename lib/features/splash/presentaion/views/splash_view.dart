@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projectapp/core/database/cache/cache_helper.dart';
 
 import 'package:projectapp/core/functions/navigation.dart';
+import 'package:projectapp/core/services/service_locator.dart';
 import 'package:projectapp/core/utiles/app_strings.dart';
 import 'package:projectapp/core/utiles/apptext_style.dart';
 
@@ -16,8 +18,14 @@ class _SpalshViewState extends State<SpalshView> {
 
 @override
 void initState() {
+ bool isOnBoardingVisited = getIt<CacheHelper>().getData(key: "isOnBoardingVisited")??false;
+ if(isOnBoardingVisited == true){
+  delayedNavigate(context,"/signUp");
+ }else{
+  delayedNavigate(context,"/onBoarding");
+ }
   super.initState(); // super.initState should be called at the beginning of initState
-  delayedNavigate(context);
+
 }
 
 
@@ -37,9 +45,9 @@ void initState() {
     );
   }
 }
-  void delayedNavigate(context) {
+  void delayedNavigate(context,path) {
     Future.delayed(const Duration(seconds: 2), () {
-      customReplacementNavigate(context,"/onBoarding");
+      customReplacementNavigate(context,path);
     },
     );
   }

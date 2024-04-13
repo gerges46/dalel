@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projectapp/core/database/cache/cache_helper.dart';
 import 'package:projectapp/core/functions/navigation.dart';
+import 'package:projectapp/core/services/service_locator.dart';
+import 'package:projectapp/features/onboarding/presention/views/onboarding.dart';
 
 import 'package:projectapp/features/onboarding/presention/widgets/custom_nav_bar.dart';
 import 'package:projectapp/features/onboarding/presention/widgets/get_buttons.dart';
@@ -27,6 +30,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
             CustomNavBar(
               onTap: () {
+           OnBoardingVisited();
                 customReplacementNavigate(context, "/signUp");
               },
             ),
@@ -51,4 +55,5 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       //),
     );
   }
+  
 }
