@@ -12,7 +12,7 @@ fontFamily: "Pacifico",
   fontSize: 28,
   fontWeight: FontWeight.w600,
   color: MyColors.black,
-fontFamily: "poppins",
+fontFamily: "pacifico",
  );
  static final poppins500style24=TextStyle(
   fontSize: 24,
