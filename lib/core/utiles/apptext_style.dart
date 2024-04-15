@@ -8,6 +8,12 @@ abstract class CustomTextStyles{
   color: MyColors.deepBrowen,
 fontFamily: "Pacifico",
  );
+ static final pacifico600style28=TextStyle(
+  fontSize: 28,
+  fontWeight: FontWeight.w600,
+  color: MyColors.black,
+fontFamily: "poppins",
+ );
  static final poppins500style24=TextStyle(
   fontSize: 24,
   fontWeight: FontWeight.w500,
@@ -18,6 +24,18 @@ fontFamily: "poppins",
   fontSize: 16,
   fontWeight: FontWeight.w300,
   color: Colors.black,
+fontFamily: "poppins",
+ );
+ static final poppins500style18=TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  color: MyColors.deepGrey,
+fontFamily: "poppins",
+ );
+ static final poppins400style12=TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  color: MyColors.deepGrey,
 fontFamily: "poppins",
  );
 }
